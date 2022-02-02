@@ -3,6 +3,7 @@ import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import Navbar from "./components/Layout/Navbar";
 import Footer from "./components/Layout/Footer";
 import About from "./pages/About";
+import User from "./pages/User";
 import Home from "./pages/Home";
 import NotFound from "./pages/NotFound";
 import { GithubProvider } from "./context/Github/GithubContext";
@@ -21,6 +22,7 @@ function App() {
               <Routes>
                 <Route path="/" element={<Home />} />
                 <Route path="/about" element={<About />} />
+                <Route path="/user/:login" element={<User />} />
                 <Route path="/notfound" element={<NotFound />} />
                 <Route path="/*" element={<NotFound />} />
               </Routes>
