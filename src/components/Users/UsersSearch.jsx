@@ -5,7 +5,7 @@ import GithubContext from "../../context/Github/GithubContext";
 const UsersSearch = () => {
   const [text, setText] = useState("");
 
-  const { users, searchUser } = useContext(GithubContext);
+  const { users, searchUser, clearUsers } = useContext(GithubContext);
 
   const handleChange = (event) => {
     setText(event.target.value);
@@ -47,7 +47,9 @@ const UsersSearch = () => {
       </div>
       {users.length > 0 && (
         <div>
-          <button className="btn btn-ghost btn-lg">Clear</button>
+          <button onClick={clearUsers} className="btn btn-ghost btn-lg">
+            Clear
+          </button>
         </div>
       )}
     </div>
